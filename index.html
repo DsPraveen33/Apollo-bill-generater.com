@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apollo Pharmacy Bill Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="menubar">
+        <div class="logo-container">
+            <img src="../Appolo bill generater/images.jpg" alt="Apollo Pharmacy Logo" class="logo-img">
+            <div class="logo-text">
+                <span class="apollo">APOLLO</span>
+                <span class="pharmacy">PHARMACY</span>
+                <div class="tagline">Your Health, Our Priority</div>
+            </div>
+        </div>
+        <ul class="menu-items">
+            <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="../Appolo bill generater/products.html"><i class="fas fa-pills"></i> Products</a></li>
+            <li><a href="#"><i class="fas fa-history"></i> History</a></li>
+            <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+    </nav>
+
+    <div class="toolbar">
+        <button class="tool-btn" id="newBill"><i class="fas fa-plus"></i> New Bill</button>
+        <button class="tool-btn" id="saveBill"><i class="fas fa-save"></i> Save</button>
+        <button class="tool-btn" id="printBill"><i class="fas fa-print"></i> Print</button>
+        <div class="tool-separator"></div>
+        <button class="tool-btn" id="exportPDF"><i class="fas fa-file-pdf"></i> Export PDF</button>
+        <button class="tool-btn" id="emailBill"><i class="fas fa-envelope"></i> Email</button>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Apollo Pharmacy</h1>
+            <h2>Bill Generator</h2>
+        </header>
+        
+        <div class="bill-form">
+            <div class="customer-details">
+                <h3><i class="fas fa-user"></i> Customer Details</h3>
+                <input type="text" id="customerName" placeholder="Customer Name">
+                <input type="text" id="customerPhone" placeholder="Phone Number">
+                <input type="text" id="customerAddress" placeholder="Address">
+            </div>
+
+            <div class="products-section">
+                <h3><i class="fas fa-capsules"></i> Products</h3>
+                <div class="medicine-search">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="medicineSearch" placeholder="Search medicine..." list="medicineList">
+                    <datalist id="medicineList">
+                        <!-- Medicine options will be populated by JavaScript -->
+                    </datalist>
+                </div>
+                <div class="product-list" id="productList">
+                    <div class="product-entry">
+                        <input type="text" placeholder="Medicine Name" class="medicine-name">
+                        <input type="number" placeholder="Quantity" class="quantity">
+                        <input type="number" placeholder="Price" class="price">
+                        <button class="remove-product"><i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+                <button id="addProduct"><i class="fas fa-plus"></i> Add Product</button>
+            </div>
+
+            <div class="calculations">
+                <div class="subtotal">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">₹0.00</span>
+                </div>
+                <div class="gst">
+                    <span>GST (18%):</span>
+                    <span id="gst">₹0.00</span>
+                </div>
+                <div class="total">
+                    <span>Total:</span>
+                    <span id="total">₹0.00</span>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button id="generateBill" class="primary-btn"><i class="fas fa-file-invoice"></i> Generate Bill</button>
+                <button id="printBill" class="primary-btn"><i class="fas fa-print"></i> Print Bill</button>
+            </div>
+        </div>
+
+        <div id="billPreview" class="bill-preview hidden">
+            <!-- Bill preview will be generated here -->
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <img src="https://www.apollopharmacy.in/_next/static/media/apollo-pharmacy.c1c75aec.svg" alt="Apollo Pharmacy Logo" class="footer-logo">
+                <p>Your Trusted Healthcare Partner</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Store Locator</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p><i class="fas fa-phone"></i> 1860-500-0101</p>
+                <p><i class="fas fa-envelope"></i> care@apollopharmacy.org</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Apollo Pharmacy. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
